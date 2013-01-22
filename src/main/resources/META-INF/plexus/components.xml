@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ * openwms.org, the Open Warehouse Management System.
+ *
+ * This file is part of openwms.org.
+ *
+ * openwms.org is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as 
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * openwms.org is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software. If not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */  
+-->
+<component-set>
+    <components>
+        <component>
+            <role>org.apache.maven.lifecycle.mapping.LifecycleMapping</role>
+            <role-hint>properties</role-hint>
+            <implementation>org.apache.maven.lifecycle.mapping.DefaultLifecycleMapping</implementation>
+            <configuration>
+                <lifecycles>
+                    <lifecycle>
+                        <id>default</id>
+                        <phases>
+                            <process-resources>org.apache.maven.plugins:maven-resources-plugin:resources</process-resources>
+                            <compile>org.apache.maven.plugins:maven-resources-plugin:resources</compile>
+                            <process-test-resources>org.apache.maven.plugins:maven-resources-plugin:testResources</process-test-resources>
+                            <package>org.apache.maven.plugins:maven-jar-plugin:jar</package>
+                            <install>org.apache.maven.plugins:maven-install-plugin:install</install>
+                            <deploy>org.apache.maven.plugins:maven-deploy-plugin:deploy</deploy>
+                        </phases>
+                    </lifecycle>
+                </lifecycles>
+            </configuration>
+        </component>
+        <component>
+            <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
+            <role-hint>properties</role-hint>
+            <implementation>org.apache.maven.artifact.handler.DefaultArtifactHandler</implementation>
+            <configuration>
+                <extension>properties</extension>
+                <type>properties</type>
+                <packaging>properties</packaging>
+            </configuration>
+        </component>
+    </components>
+</component-set>
