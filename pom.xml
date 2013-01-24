@@ -31,6 +31,7 @@
     <name>maven-properties-plugin Maven Mojo</name>
     <url>http://www.openwms.org</url>
     <inceptionYear>2005</inceptionYear>
+    <description>A simple plugin to attach Java properties files</description>
 
     <issueManagement>
         <system>JIRA</system>
