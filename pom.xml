@@ -151,6 +151,14 @@
     <ciManagement>
         <system>Jenkins</system>
         <url>http://openwms.blogsite.org:81/jenkins</url>
+        <notifiers>
+            <notifier>
+                <type>mail</type>
+                <configuration>
+                    <address>product@openwms.org</address>
+                </configuration>
+            </notifier>
+        </notifiers>
     </ciManagement>
 
     <properties>
